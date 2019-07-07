@@ -1,0 +1,32 @@
+---
+subject: Welcome To Acquisition Planner
+---
+<row>
+  <columns>
+    <spacer size="16"></spacer>
+    <h6>Hi <span th:text="${user_name}">User Name</span>,</h6>
+    <spacer size="8"></spacer>
+    <p><b th:text="${customer_name}">Customer Name</b> has created an RFP which you've been invited to respond to.</p>
+    <p>The participation period for this RFP will end on <span th:text="${end_date}">December 12th, 2019</span></p>
+    <center>
+      <table class="button">
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td><a th:href="@{${action_url}}" target="_blank">View RFP</a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </center>
+    <p>If you’re having trouble with the button above, copy and paste the URL below into your web browser.</p>
+    <a th:href="@{${action_url}}">
+      <pre class="mt-0 mb-3 reset-link" th:text="${action_url}">http://localhost:8080/RFP/PROJECT_ID</pre>
+    </a>
+    <spacer size="8"></spacer>
+    <p><b>Best regards,</b></p>
+    <p><b>The Acquisition Planner Team</b></p>
+  </columns>
+</row>

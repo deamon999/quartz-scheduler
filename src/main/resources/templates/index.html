@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Quartz Scheduler Home Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>List of task scheduled to run</h1>
+</div>
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Job Name</th>
+            <th scope="col">Job Group</th>
+            <th scope="col">Job Class</th>
+            <th scope="col">Start time</th>
+            <th scope="col">State</th>
+            <th scope="col">Change State Action</th>
+            <th scope="col">Delete Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="job : ${jobs}">
+            <td th:utext="${job.id}">...</td>
+            <td th:utext="${job.jobName}">...</td>
+            <td th:utext="${job.jobGroup}">...</td>
+            <td th:utext="${job.jobClass}">...</td>
+            <td th:utext="${job.startTime}">...</td>
+            <td th:utext="${job.state}">...</td>
+            <td>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                        Choose state
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" th:href="@{/ChangeState(s='ACTIVE',id=${job.id})}">Active</a>
+                        <a class="dropdown-item" th:href="@{/ChangeState(s='PAUSE')}">Pause</a>
+                        <a class="dropdown-item" th:href="@{/ChangeState(s='STOP')}">Stop</a>
+                    </div>
+                </div>
+            </td>
+            <td><a th:href="@{/DeleteJob(id=${job.id})}" class="btn btn-primary btn- active" role="button"
+                   aria-pressed="true">Delete
+                Job</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

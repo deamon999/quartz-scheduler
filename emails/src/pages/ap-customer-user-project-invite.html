@@ -1,0 +1,31 @@
+---
+subject: Acquisition Planner Project Invitation
+---
+<row>
+  <columns>
+    <spacer size="16"></spacer>
+    <h6>Hi <span th:text="${user_name}">User Name</span>,</h6>
+    <spacer size="8"></spacer>
+    <p>You've been invited to participate in a project on Acquisition Planner.</p>
+    <center>
+      <table class="button">
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td><a th:href="@{${action_url}}" target="_blank">View Project</a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </center>
+    <p>If you’re having trouble with the button above, copy and paste the URL below into your web browser.</p>
+    <a th:href="@{${action_url}}">
+      <pre class="mt-0 mb-3 reset-link" th:text="${action_url}">http://localhost:8080/Project/PROJECT_ID</pre>
+    </a>
+    <spacer size="8"></spacer>
+    <p><b>Best regards,</b></p>
+    <p><b>The Acquisition Planner Team</b></p>
+  </columns>
+</row>

@@ -1,0 +1,25 @@
+---
+subject: Welcome To Acquisition Planner
+---
+<row>
+  <columns>
+    <spacer size="16"></spacer>
+    <h6>Hi <span th:text="${user_name}">User Name</span>,</h6>
+    <spacer size="8"></spacer>
+    <p><b th:text="${customer_name}">Customer Name</b> has recalled their RFP for <b th:text="${project_name}">Project Name</b>.</p>
+    <p>As a result of this change, proposals for this RFP are no longer being accepted.</p>
+    <callout>
+      <p class="subheading"><b>Reason:</b></p>
+      <row>
+        <columns th:utext="${reason}" class="pb-0">
+          <p>Sorry everyone,</p>
+          <p>There were a few items that we forgot to add. We're going to make a few changes and do this again.</p>
+          <p>Thanks for your patience.</p>
+        </columns>
+      </row>
+    </callout>
+    <spacer size="8"></spacer>
+    <p><b>Best regards,</b></p>
+    <p><b>The Acquisition Planner Team</b></p>
+  </columns>
+</row>

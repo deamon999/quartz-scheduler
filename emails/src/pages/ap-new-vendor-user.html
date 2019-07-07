@@ -1,0 +1,33 @@
+---
+subject: Welcome To Acquisition Planner
+---
+<row>
+  <columns>
+    <spacer size="16"></spacer>
+    <h6>Hi there,</h6>
+    <spacer size="8"></spacer>
+    <p>You've been invited to represent <span th:text="${vendor_name}">Spacelabs</span> on Acquisition Planner.</p>
+    <p><b>Shane, what do you want me to say here?</b></p>
+    <center>
+      <table class="button">
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td><a th:href="@{${action_url}}" target="_blank">Get Started</a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </center>
+    <p>If you’re having trouble with the button above, copy and paste the URL below into your web browser.</p>
+    <a th:href="@{${action_url}}">
+      <pre class="mt-0 mb-3 reset-link" th:text="${action_url}">http://localhost:8080/Register/TOKEN?project=PROJECT_ID</pre>
+    </a>
+    <p>If you have any problems, contact our support team at <a th:href="@{mailto:${support_email}}" th:text="${support_email}" class="no-line-break">vendor-support@acquisitionsimplicity.com</a></p>
+    <spacer size="8"></spacer>
+    <p><b>Best regards,</b></p>
+    <p><b>The Acquisition Planner Team</b></p>
+  </columns>
+</row>

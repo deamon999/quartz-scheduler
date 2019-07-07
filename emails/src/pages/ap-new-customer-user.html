@@ -1,0 +1,32 @@
+---
+subject: Welcome To Acquisition Planner
+---
+<row>
+  <columns>
+    <spacer size="16"></spacer>
+    <h6>Hi there,</h6>
+    <spacer size="8"></spacer>
+    <p>You've been invited to Acquisition Planner, a new and better way to make your major purchasing decisions.</p>
+    <center>
+      <table class="button">
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td><a th:href="@{${action_url}}" target="_blank">Get Started</a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </center>
+    <p>If you’re having trouble with the button above, copy and paste the URL below into your web browser.</p>
+    <a th:href="@{${action_url}}">
+      <pre class="mt-0 mb-3 reset-link" th:text="${action_url}">http://localhost:8080/Register/TOKEN</pre>
+    </a>
+    <p>If you have any problems, contact your account administrator at <a th:href="@{mailto:${admin_email}}" th:text="${admin_email}">theUserThatInvitedYou@theCompanyTheyWorkFor.com</a></p>
+    <spacer size="8"></spacer>
+    <p><b>Best regards,</b></p>
+    <p><b>The Acquisition Planner Team</b></p>
+  </columns>
+</row>
